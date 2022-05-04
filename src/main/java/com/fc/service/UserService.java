@@ -15,4 +15,6 @@ public interface UserService {
     ReturnMessageVO del(Long id);
 
     ReturnMessageVO search(String info, int pageNum, int pageSize);
+
+    ReturnMessageVO login(String username, String password);
 }

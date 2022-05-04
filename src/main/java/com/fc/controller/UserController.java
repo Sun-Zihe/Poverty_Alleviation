@@ -15,6 +15,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @PostMapping("login")
+    public ReturnMessageVO login(@RequestParam String username,
+                          @RequestParam String password) {
+        return userService.login(username, password);
+    }
+
     @RequestMapping(value = "add",method = RequestMethod.POST)
     public ReturnMessageVO add(@RequestBody User user){
         return userService.add(user);
